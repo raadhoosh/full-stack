@@ -1,0 +1,8 @@
+endpoint: https://us1.prisma.sh/sajad-mohammadi-nejad-b00947/hello-world/dev
+datamodel: datamodel.prisma
+hooks:
+  post-deploy:
+    - prisma generate
+generate:
+  - generator: typescript-client
+    output: ./generated/prisma-client/
