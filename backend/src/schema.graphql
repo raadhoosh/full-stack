@@ -14,6 +14,8 @@ type User {
   id: ID!
   email: String
   name: String!
+  email: String!
+  permissions: [Permission!]!
   posts: [Post!]!
 }
 
