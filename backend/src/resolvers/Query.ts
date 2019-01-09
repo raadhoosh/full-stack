@@ -1,14 +1,17 @@
 const Query = {
-    publishedPosts(parent, args, context) {
-        return context.prisma.posts({ where: { published: true } })
+    users(parent, args, context, info) {
+        return context.db.query.users({}, info);
     },
-    post(parent, args, context) {
-        return context.prisma.post({ id: args.postId })
+    publishedPosts(parent, args, context, info) {
+        return context.db.query.posts({ where: { published: true } }, info)
     },
-    postsByUser(parent, args, context) {
-        return context.prisma.user({
-            id: args.userId
-        }).posts()
+    post(parent, args, context, info) {
+        return context.db.query.post({ where: { id: args.postId } }, info)
+    },
+    postsByUser(parent, args, context, info) {
+        return context.db.query.user({
+            where: { id: args.userId }
+        }, info).posts()
     }
 }
 export default Query;

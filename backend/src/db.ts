@@ -1,13 +1,11 @@
-import { prisma } from './generated/prisma-client'
-export default prisma;
-// const { Prisma } = require("prisma-binding");
-
-// const db = new Prisma({
-//     typeDefs: 'src/generated/prisma.graphql',
-//     endpoint: process.env.PRISMA_ENDPOINT,
-//     secret: process.env.PRISMA_SECRET,
-//     debug: false,
-// })
+import { Prisma } from "prisma-binding";
+// console.log("process.env.PRISMA_ENDPOINT",process.env.PRISMA_ENDPOINT)
+const db = new Prisma({
+    typeDefs: 'src/generated/prisma.graphql',
+    endpoint: "https://us1.prisma.sh/sajad-mohammadi-nejad-b00947/hello-world/dev",
+    // secret: process.env.PRISMA_SECRET,
+    debug: false,
+})
 
 
-// export default db;
+export default db;

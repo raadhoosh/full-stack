@@ -1,7 +1,6 @@
 import createServer from './createServer';
 import db from './db';
 import * as dotenv from 'dotenv';
-
 //env
 dotenv.config();
 

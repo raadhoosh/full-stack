@@ -1,8 +1,8 @@
 endpoint: https://us1.prisma.sh/sajad-mohammadi-nejad-b00947/hello-world/dev
-datamodel: datamodel.prisma
+datamodel: datamodel.graphql
 hooks:
   post-deploy:
-    - prisma generate
+    - graphql get-schema -p prisma
 generate:
-  - generator: typescript-client
-    output: ./src/generated/prisma-client/
+  - generator:  graphql-schema
+    output: ./src/generated
