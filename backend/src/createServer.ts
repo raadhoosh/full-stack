@@ -18,8 +18,6 @@ function createServer() {
 }
 
 export default createServer;
-
-
 // import { prisma } from './generated/prisma-client'
 
 
